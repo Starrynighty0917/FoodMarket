@@ -51,17 +51,19 @@ class ShoppingCartDetialSerializer(serializers.ModelSerializer):
 
 
 class OrderGoodsSerializer(serializers.ModelSerializer):
+    goods = GoodsSerializer(many=False)
+
     class Meta:
         model = OrderGoods
         fields = "__all__"
 
 
 class OrderInfoDetailSerializer(serializers.ModelSerializer):
-    goods = OrderGoodsSerializer(many=True)
+    orderGoods = OrderGoodsSerializer(many=True)
 
     class Meta:
         model = OrderInfo
-        fields = "__all__"
+        fields = ("orderGoods", "order_sn", "pay_status", "id", "address", "signer_name", "signer_mobile")
 
 
 class OrderInfoSerializer(serializers.ModelSerializer):

@@ -74,7 +74,7 @@ class ShoppingCartDeleteAll(DestroyAPIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class OrderInfoViewSet(ListModelMixin, DestroyModelMixin, CreateModelMixin,
+class OrderInfoViewSet(ListModelMixin, DestroyModelMixin, CreateModelMixin, RetrieveModelMixin,
                        viewsets.GenericViewSet):
 
     authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
@@ -95,6 +95,12 @@ class OrderInfoViewSet(ListModelMixin, DestroyModelMixin, CreateModelMixin,
             order_goods.save()
         shopcart.delete()
         return order
+
+    def get_serializer_class(self):
+        if self.action == "retrieve":
+            return OrderInfoDetailSerializer
+        else:
+            return OrderInfoSerializer
 
 
 
