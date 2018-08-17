@@ -98,10 +98,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'FoodMarket',
-        'HOST': '127.0.0.1',
+        'HOST': '122.114.105.49',
         'USER': 'root',
-        'PASSWORD': '09170725',
-        'PORT': '3306',
+        'PASSWORD': '09170725lxy',
+        'PORT': '5678',
         'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'},
     }
 }
@@ -158,7 +158,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
 # 富文本编辑器里面图片访问的的前缀也是服务器运行的域名
-UEDITOR_PREFIX = "http://127.0.0.1:8000"
+UEDITOR_PREFIX = "http://122.114.105.49:8000"
 
 REST_FRAMEWORK = {
 
