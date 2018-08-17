@@ -22,7 +22,6 @@ mixin
 mysqlclient
 pathtools
 Pillow
-pkg-resources
 PyJWT
 pytz
 PyYAML
