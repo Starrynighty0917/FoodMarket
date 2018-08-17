@@ -28,7 +28,7 @@ SECRET_KEY = 'wv!pw+z=joi0%3a8knmze)(pzbf3@f0!o4-p@4-ysilm35#lit'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 # 替换系统用户的配置,可以看到from django.contrib.auth.models import User中User也是继承了AbstractUser
 # 并且里面有个可交换的变量swappable=‘AUTH_USER_MODEL’，这里我们将自己写一个User类继承AbstractUser并且修改这个变量
 AUTH_USER_MODEL = 'users.UserProfile'
